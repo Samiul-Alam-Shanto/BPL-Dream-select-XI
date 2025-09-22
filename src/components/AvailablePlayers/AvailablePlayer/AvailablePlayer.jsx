@@ -6,7 +6,7 @@ const AvailablePlayer = ({ player }) => {
   console.log(player);
   return (
     <div>
-      <div className="card bg-base-100 w-96 shadow-sm p-4 ">
+      <div className="card bg-base-100 shadow-sm p-4 ">
         <figure>
           <img
             className="w-full h-[250px] object-cover rounded-xl"
