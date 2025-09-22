@@ -2,9 +2,13 @@ import React from "react";
 
 import SelectedPlayer from "./SelectedPlayer/SelectedPlayer";
 
-const SelectedPlayers = ({ purchasedPlayer, removePurchasedPlayer }) => {
+const SelectedPlayers = ({
+  purchasedPlayer,
+  removePurchasedPlayer,
+  className,
+}) => {
   return (
-    <div>
+    <div className={className}>
       {purchasedPlayer.map((playerInfo) => (
         <SelectedPlayer
           key={playerInfo.id}

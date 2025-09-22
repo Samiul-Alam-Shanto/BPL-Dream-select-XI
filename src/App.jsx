@@ -61,32 +61,25 @@ function App() {
         </div>
       </div>
 
-      {toggle ? (
-        <Suspense
-          fallback={
-            <span className="loading loading-spinner loading-xl"></span>
-          }
-        >
-          <AvailablePlayers
-            availableBalance={availableBalance}
-            setAvailableBalance={setAvailableBalance}
-            playersPromise={playersPromise}
-            purchasedPlayer={purchasedPlayer}
-            setPurchasedPlayer={setPurchasedPlayer}
-          ></AvailablePlayers>
-        </Suspense>
-      ) : (
-        <Suspense
-          fallback={
-            <span className="loading loading-spinner loading-xl"></span>
-          }
-        >
-          <SelectedPlayers
-            purchasedPlayer={purchasedPlayer}
-            removePurchasedPlayer={removePurchasedPlayer}
-          ></SelectedPlayers>
-        </Suspense>
-      )}
+      <Suspense
+        fallback={<span className="loading loading-spinner loading-xl"></span>}
+      >
+        <AvailablePlayers
+          className={toggle ? "block" : "hidden"}
+          availableBalance={availableBalance}
+          setAvailableBalance={setAvailableBalance}
+          playersPromise={playersPromise}
+          purchasedPlayer={purchasedPlayer}
+          setPurchasedPlayer={setPurchasedPlayer}
+        ></AvailablePlayers>
+
+        <SelectedPlayers
+          className={toggle ? "hidden" : "block"}
+          purchasedPlayer={purchasedPlayer}
+          removePurchasedPlayer={removePurchasedPlayer}
+        ></SelectedPlayers>
+      </Suspense>
+
       <ToastContainer />
     </>
   );

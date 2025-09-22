@@ -2,6 +2,7 @@ import React, { use } from "react";
 import AvailablePlayer from "./AvailablePlayer/AvailablePlayer";
 
 const AvailablePlayers = ({
+  className,
   playersPromise,
   setAvailableBalance,
   availableBalance,
@@ -11,7 +12,9 @@ const AvailablePlayers = ({
   const playerData = use(playersPromise);
   // console.log(playerData);
   return (
-    <div className="max-w-[1220px] mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-5">
+    <div
+      className={`max-w-[1220px] mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-5 ${className}`}
+    >
       {playerData.map((player) => (
         <AvailablePlayer
           purchasedPlayer={purchasedPlayer}
