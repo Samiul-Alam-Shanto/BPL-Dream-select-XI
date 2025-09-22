@@ -1,9 +1,18 @@
-import React from "react";
+import React, { useState } from "react";
 import personImg from "../../../assets/Group.png";
 import flagImg from "../../../assets/Vector.png";
 
-const AvailablePlayer = ({ player }) => {
-  console.log(player);
+const AvailablePlayer = ({ player, availableBalance, setAvailableBalance }) => {
+  const [selectPlayer, setSelectPlayer] = useState(false);
+  const handleSelectPlayer = (playerData) => {
+    const playerPrice = Number(playerData.Price.split(",").join(""));
+    if (availableBalance < playerPrice) {
+      alert("Not Enough Coins");
+      return;
+    }
+    setSelectPlayer(true);
+    setAvailableBalance(availableBalance - playerPrice);
+  };
   return (
     <div>
       <div className="card bg-base-100 shadow-sm p-4 ">
@@ -39,7 +48,13 @@ const AvailablePlayer = ({ player }) => {
             <h3 className="font-semibold">
               Price : $<span>{player.Price}</span>
             </h3>
-            <button className="btn">Choose Player</button>
+            <button
+              disabled={selectPlayer}
+              onClick={() => handleSelectPlayer(player)}
+              className="btn"
+            >
+              {selectPlayer ? "Selected" : "Choose Player"}
+            </button>
           </div>
         </div>
       </div>
