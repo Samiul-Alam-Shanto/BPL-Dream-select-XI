@@ -1,0 +1,134 @@
+[
+  {
+    "id": 1,
+    "Player Name": "Virat Kohli",
+    "Country": "India",
+    "Type": "Batsman",
+    "Rating": 98,
+    "Batting Style": "Right-hand bat",
+    "Bowling Style": "Right-arm occasional",
+    "Demo Price": "$1,200,000",
+    "Image": "https://upload.wikimedia.org/wikipedia/commons/9/9b/Virat_Kohli_in_PMO_New_Delhi.jpg"
+  },
+  {
+    "id": 2,
+    "Player Name": "Babar Azam",
+    "Country": "Pakistan",
+    "Type": "Batsman",
+    "Rating": 95,
+    "Batting Style": "Right-hand bat",
+    "Bowling Style": "Right-arm offbreak (occasional)",
+    "Demo Price": "$900,000",
+    "Image": "https://i.ibb.co.com/HTJD14qW/post-image-a66c072.jpg"
+  },
+  {
+    "id": 3,
+    "Player Name": "Joe Root",
+    "Country": "England",
+    "Type": "Batsman",
+    "Rating": 92,
+    "Batting Style": "Right-hand bat",
+    "Bowling Style": "Right-arm offbreak",
+    "Demo Price": "$850,000",
+    "Image": "https://i.ibb.co.com/wZmf5BYc/skysports-joe-root-england-6835499.jpg"
+  },
+  {
+    "id": 4,
+    "Player Name": "Steve Smith",
+    "Country": "Australia",
+    "Type": "Batsman",
+    "Rating": 94,
+    "Batting Style": "Right-hand bat",
+    "Bowling Style": "Right-arm legbreak",
+    "Demo Price": "$870,000",
+    "Image": "https://i.ibb.co.com/LXxkZ5Q3/post-image-70586f0.jpg"
+  },
+  {
+    "id": 5,
+    "Player Name": "Kane Williamson",
+    "Country": "New Zealand",
+    "Type": "Batsman",
+    "Rating": 93,
+    "Batting Style": "Right-hand bat",
+    "Bowling Style": "Right-arm offbreak",
+    "Demo Price": "$860,000",
+    "Image": "https://i.ibb.co.com/s9KKND2z/kane08102301.jpg"
+  },
+  {
+    "id": 6,
+    "Player Name": "Rashid Khan",
+    "Country": "Afghanistan",
+    "Type": "Bowling all-rounder (Spinner)",
+    "Rating": 91,
+    "Batting Style": "Right-hand bat",
+    "Bowling Style": "Right-arm legbreak",
+    "Demo Price": "$780,000",
+    "Image": "https://upload.wikimedia.org/wikipedia/commons/7/71/Rashid_Khan.jpg"
+  },
+  {
+    "id": 7,
+    "Player Name": "Jasprit Bumrah",
+    "Country": "India",
+    "Type": "Bowler",
+    "Rating": 95,
+    "Batting Style": "Right-hand bat",
+    "Bowling Style": "Right-arm fast",
+    "Demo Price": "$1,000,000",
+    "Image": "https://i.ibb.co.com/DPsmdvB2/Jasprit-Bumrah-in-PMO-New-Delhi.jpg"
+  },
+  {
+    "id": 8,
+    "Player Name": "Trent Boult",
+    "Country": "New Zealand",
+    "Type": "Bowler",
+    "Rating": 89,
+    "Batting Style": "Left-hand bat",
+    "Bowling Style": "Left-arm fast-medium",
+    "Demo Price": "$750,000",
+    "Image": "https://i.ibb.co.com/Y4TRs8Ym/2018-02-03-22-23-14-AUSv-NZL-T20-AUS-innings-SCG-39533156665.jpg"
+  },
+  {
+    "id": 9,
+    "Player Name": "Ben Stokes",
+    "Country": "England",
+    "Type": "All-rounder",
+    "Rating": 96,
+    "Batting Style": "Left-hand bat",
+    "Bowling Style": "Right-arm fast-medium",
+    "Demo Price": "$1,100,000",
+    "Image": "https://i.ibb.co.com/YT4Mn5rm/cover-1651140312-Untitled-1.jpg"
+  },
+  {
+    "id": 10,
+    "Player Name": "Shakib Al Hasan",
+    "Country": "Bangladesh",
+    "Type": "All-rounder",
+    "Rating": 90,
+    "Batting Style": "Left-hand bat",
+    "Bowling Style": "Left-arm orthodox",
+    "Demo Price": "$700,000",
+    "Image": "https://i.ibb.co.com/4w54s2bv/2c31015d1d3df874992d5f90c4d9c1ab.jpg"
+  },
+  {
+    "id": 11,
+    "Player Name": "David Warner",
+    "Country": "Australia",
+    "Type": "Batsman",
+    "Rating": 90,
+    "Batting Style": "Left-hand bat",
+    "Bowling Style": "Right-arm legbreak (occasional)",
+    "Demo Price": "$650,000",
+    "Image": "https://i.ibb.co.com/kgdTKJMf/skysports-david-warner-australia-5562949.jpg"
+  },
+  {
+    "id": 12,
+    "Player Name": "Quinton de Kock",
+    "Country": "South Africa",
+    "Type": "Wicketkeeper-batsman",
+    "Rating": 88,
+    "Batting Style": "Left-hand bat",
+    "Bowling Style": "N/A (wk)",
+    "Demo Price": "$600,000",
+    "Image": "https://upload.wikimedia.org/wikipedia/commons/b/bd/QUINTON_DE_KOCK_%2815085160584%29.jpg"
+  }
+]
