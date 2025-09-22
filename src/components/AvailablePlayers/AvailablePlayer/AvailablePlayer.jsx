@@ -1,17 +1,31 @@
 import React, { useState } from "react";
 import personImg from "../../../assets/Group.png";
 import flagImg from "../../../assets/Vector.png";
+import { toast } from "react-toastify";
 
-const AvailablePlayer = ({ player, availableBalance, setAvailableBalance }) => {
+const AvailablePlayer = ({
+  player,
+  availableBalance,
+  setAvailableBalance,
+  purchasedPlayer,
+  setPurchasedPlayer,
+}) => {
   const [selectPlayer, setSelectPlayer] = useState(false);
   const handleSelectPlayer = (playerData) => {
     const playerPrice = Number(playerData.Price.split(",").join(""));
     if (availableBalance < playerPrice) {
-      alert("Not Enough Coins");
+      toast("Not Enough Coins");
+      return;
+    }
+    if (purchasedPlayer.length == 6) {
+      toast("Maximum Player Selected");
       return;
     }
     setSelectPlayer(true);
     setAvailableBalance(availableBalance - playerPrice);
+    const newPurchasedPlayer = [...purchasedPlayer, playerData];
+    setPurchasedPlayer(newPurchasedPlayer);
+    toast("Player Purchased");
   };
   return (
     <div>

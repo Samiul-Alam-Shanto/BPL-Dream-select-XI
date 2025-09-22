@@ -3,6 +3,7 @@ import "./App.css";
 import Navbar from "./components/Navbar/Navbar";
 import AvailablePlayers from "./components/AvailablePlayers/AvailablePlayers";
 import SelectedPlayers from "./components/SelectedPlayers/SelectedPlayers";
+import { toast, ToastContainer } from "react-toastify";
 
 const fetchPlayers = async () => {
   const res = await fetch("/Players.json");
@@ -16,13 +17,30 @@ function App() {
 
   //state for available balance coins
 
-  const [availableBalance, setAvailableBalance] = useState(5000000);
+  const [availableBalance, setAvailableBalance] = useState(500000000);
+
+  //state for selected players
+
+  const [purchasedPlayer, setPurchasedPlayer] = useState([]);
+
+  //using state lifting up
+
+  const removePurchasedPlayer = (p) => {
+    setPurchasedPlayer(purchasedPlayer.filter((ply) => ply.id !== p.id));
+    toast("Player Removed");
+    setAvailableBalance(availableBalance + Number(p.Price.split(",").join("")));
+  };
+
   return (
     <>
       <Navbar availableBalance={availableBalance}></Navbar>
 
       <div className="flex flex-col gap-2 sm:flex-row justify-between items-center max-w-[1220px] mx-auto mt-5">
-        <h1 className="font-bold text-2xl">Available Players</h1>
+        <h1 className="font-bold text-2xl">
+          {toggle
+            ? "Available Players"
+            : `Selected Player (${purchasedPlayer.length}/6)`}
+        </h1>
         <div>
           <button
             onClick={() => setToggle(true)}
@@ -38,7 +56,7 @@ function App() {
               !toggle ? "bg-[#E7FE29]" : ""
             }`}
           >
-            Selected(<span>0</span>)
+            Selected(<span>{purchasedPlayer.length}</span>)
           </button>
         </div>
       </div>
@@ -53,11 +71,23 @@ function App() {
             availableBalance={availableBalance}
             setAvailableBalance={setAvailableBalance}
             playersPromise={playersPromise}
+            purchasedPlayer={purchasedPlayer}
+            setPurchasedPlayer={setPurchasedPlayer}
           ></AvailablePlayers>
         </Suspense>
       ) : (
-        <SelectedPlayers></SelectedPlayers>
+        <Suspense
+          fallback={
+            <span className="loading loading-spinner loading-xl"></span>
+          }
+        >
+          <SelectedPlayers
+            purchasedPlayer={purchasedPlayer}
+            removePurchasedPlayer={removePurchasedPlayer}
+          ></SelectedPlayers>
+        </Suspense>
       )}
+      <ToastContainer />
     </>
   );
 }
