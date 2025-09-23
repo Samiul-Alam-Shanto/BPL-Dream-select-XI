@@ -4,6 +4,7 @@ import Navbar from "./components/Navbar/Navbar";
 import AvailablePlayers from "./components/AvailablePlayers/AvailablePlayers";
 import SelectedPlayers from "./components/SelectedPlayers/SelectedPlayers";
 import { toast, ToastContainer } from "react-toastify";
+import Banner from "./components/Banner/Banner";
 
 const fetchPlayers = async () => {
   const res = await fetch("/Players.json");
@@ -34,6 +35,7 @@ function App() {
   return (
     <>
       <Navbar availableBalance={availableBalance}></Navbar>
+      <Banner></Banner>
 
       <div className="flex flex-col gap-2 sm:flex-row justify-between items-center max-w-[1220px] mx-auto mt-5">
         <h1 className="font-bold text-2xl">
@@ -75,6 +77,7 @@ function App() {
 
         <SelectedPlayers
           className={toggle ? "hidden" : "block"}
+          setToggle={setToggle}
           purchasedPlayer={purchasedPlayer}
           removePurchasedPlayer={removePurchasedPlayer}
         ></SelectedPlayers>

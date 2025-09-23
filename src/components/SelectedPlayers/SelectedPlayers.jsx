@@ -6,6 +6,7 @@ const SelectedPlayers = ({
   purchasedPlayer,
   removePurchasedPlayer,
   className,
+  setToggle,
 }) => {
   return (
     <div className={className}>
@@ -16,6 +17,12 @@ const SelectedPlayers = ({
           removePurchasedPlayer={removePurchasedPlayer}
         ></SelectedPlayer>
       ))}
+      <button
+        onClick={() => setToggle(true)}
+        className="border px-5 py-3 rounded-xl mt-4 cursor-pointer font-bold hover:bg-amber-200"
+      >
+        Add More Players
+      </button>
     </div>
   );
 };
