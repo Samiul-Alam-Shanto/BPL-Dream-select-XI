@@ -6,7 +6,7 @@ const SelectedPlayer = ({ playerInfo, removePurchasedPlayer }) => {
     removePurchasedPlayer(playerDetails);
   };
   return (
-    <div className="max-w-[1220px] mx-auto mt-5 border border-gray-300 rounded-xl p-3 flex items-center justify-between">
+    <div className=" mt-5 border border-gray-300 rounded-xl p-3 flex items-center justify-between">
       <div className="flex gap-2">
         <img
           className="w-[50px] h-[50px] rounded-xl"
@@ -21,7 +21,7 @@ const SelectedPlayer = ({ playerInfo, removePurchasedPlayer }) => {
         </div>
       </div>
       <div onClick={() => removePlayer(playerInfo)}>
-        <img src={trash} alt="" />
+        <img className="cursor-pointer" src={trash} alt="" />
       </div>
     </div>
   );

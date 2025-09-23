@@ -26,11 +26,16 @@ function App() {
   const [purchasedPlayer, setPurchasedPlayer] = useState([]);
 
   //using state lifting up
+  //select player btn restore after removing player
+  const restoreSelect = () => {
+    console.log("restored");
+  };
 
   const removePurchasedPlayer = (p) => {
     setPurchasedPlayer(purchasedPlayer.filter((ply) => ply.id !== p.id));
     toast("Player Removed");
     setAvailableBalance(availableBalance + Number(p.Price.split(",").join("")));
+    restoreSelect();
   };
 
   return (
@@ -74,6 +79,7 @@ function App() {
           playersPromise={playersPromise}
           purchasedPlayer={purchasedPlayer}
           setPurchasedPlayer={setPurchasedPlayer}
+          restoreSelect={restoreSelect}
         ></AvailablePlayers>
 
         <SelectedPlayers

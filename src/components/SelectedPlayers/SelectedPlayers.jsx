@@ -9,7 +9,7 @@ const SelectedPlayers = ({
   setToggle,
 }) => {
   return (
-    <div className={className}>
+    <div className={`pb-30 max-w-[1220px] mx-auto ${className}`}>
       {purchasedPlayer.map((playerInfo) => (
         <SelectedPlayer
           key={playerInfo.id}

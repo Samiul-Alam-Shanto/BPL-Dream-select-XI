@@ -13,7 +13,7 @@ const AvailablePlayers = ({
   // console.log(playerData);
   return (
     <div
-      className={`max-w-[1220px] mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-5 ${className} pb-48`}
+      className={`max-w-[1220px] mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-5 ${className} pb-30`}
     >
       {playerData.map((player) => (
         <AvailablePlayer
