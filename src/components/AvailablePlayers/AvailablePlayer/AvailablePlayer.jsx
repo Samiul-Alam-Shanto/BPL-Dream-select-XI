@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+// import React, { useState } from "react";
 import personImg from "../../../assets/Group.png";
 import flagImg from "../../../assets/Vector.png";
 import { toast } from "react-toastify";
@@ -9,8 +9,8 @@ const AvailablePlayer = ({
   setAvailableBalance,
   purchasedPlayer,
   setPurchasedPlayer,
+  isSelected,
 }) => {
-  const [selectPlayer, setSelectPlayer] = useState(false);
   const handleSelectPlayer = (playerData) => {
     const playerPrice = Number(playerData.Price.split(",").join(""));
     if (availableBalance < playerPrice) {
@@ -21,7 +21,7 @@ const AvailablePlayer = ({
       toast("Maximum Player Selected");
       return;
     }
-    setSelectPlayer(true);
+
     setAvailableBalance(availableBalance - playerPrice);
     const newPurchasedPlayer = [...purchasedPlayer, playerData];
     setPurchasedPlayer(newPurchasedPlayer);
@@ -64,11 +64,11 @@ const AvailablePlayer = ({
               Price : $<span>{player.Price}</span>
             </h3>
             <button
-              disabled={selectPlayer}
+              disabled={isSelected}
               onClick={() => handleSelectPlayer(player)}
               className="btn"
             >
-              {selectPlayer ? "Selected" : "Choose Player"}
+              {isSelected ? "Selected" : "Choose Player"}
             </button>
           </div>
         </div>
